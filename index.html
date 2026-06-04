@@ -10,15 +10,13 @@
     <!-- Navigation -->
     <nav class="navbar">
         <div class="navbar-container">
-            <div class="navbar-logo"><img src="https://cdn.builder.io/api/v1/image/assets%2Fda30370718c8429f8e54b9f0e6e57953%2F90c304175a094bdeb8c2c5a6905fa7c5?format=webp&width=800&height=1200" alt="Backstage logo" class="logo-image"></div>
+            <!-- Logo -->
+            <div class="navbar-logo">
+                <img src="https://cdn.builder.io/api/v1/image/assets%2Fda30370718c8429f8e54b9f0e6e57953%2F90c304175a094bdeb8c2c5a6905fa7c5?format=webp&width=800&height=1200" alt="Backstage logo" class="logo-image">
+            </div>
 
-            <button class="menu-toggle" aria-label="Toggle menu">
-                <span class="hamburger-line"></span>
-                <span class="hamburger-line"></span>
-                <span class="hamburger-line"></span>
-            </button>
-
-            <ul class="nav-menu" id="nav-menu">
+            <!-- Desktop Menu -->
+            <ul class="navbar-menu">
                 <li><a href="#news">News</a></li>
                 <li><a href="#events">Events</a></li>
                 <li><a href="#artists">Artists</a></li>
@@ -28,29 +26,41 @@
                 <li><a href="#about">About</a></li>
             </ul>
 
-            <div class="navbar-right">
-                <button class="search-btn" aria-label="Search">
+            <!-- Right Controls (Desktop) -->
+            <div class="navbar-controls">
+                <button class="navbar-search-btn" aria-label="Search">
                     <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor">
                         <circle cx="11" cy="11" r="8"></circle>
                         <path d="m21 21-4.35-4.35"></path>
                     </svg>
                 </button>
-                <button class="newsletter-btn">Newsletter</button>
+                <button class="navbar-newsletter-btn">Newsletter</button>
             </div>
+
+            <!-- Mobile Hamburger -->
+            <button class="hamburger-toggle" aria-label="Toggle menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
         </div>
     </nav>
 
     <!-- Mobile Menu Drawer -->
-    <div class="mobile-menu">
-        <div class="mobile-menu-header">
-            <button class="mobile-menu-close" aria-label="Close menu">
+    <div class="mobile-drawer">
+        <div class="mobile-drawer-header">
+            <div class="mobile-drawer-logo">
+                <img src="https://cdn.builder.io/api/v1/image/assets%2Fda30370718c8429f8e54b9f0e6e57953%2F90c304175a094bdeb8c2c5a6905fa7c5?format=webp&width=800&height=1200" alt="Backstage logo" class="logo-image">
+            </div>
+            <button class="mobile-drawer-close" aria-label="Close menu">
                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                     <line x1="18" y1="6" x2="6" y2="18"></line>
                     <line x1="6" y1="6" x2="18" y2="18"></line>
                 </svg>
             </button>
         </div>
-        <ul class="mobile-menu-list">
+
+        <ul class="mobile-drawer-menu">
             <li><a href="#news">News</a></li>
             <li><a href="#events">Events</a></li>
             <li><a href="#artists">Artists</a></li>
@@ -59,8 +69,9 @@
             <li><a href="#festivals">Festivals</a></li>
             <li><a href="#about">About</a></li>
         </ul>
-        <div class="mobile-menu-footer">
-            <button class="mobile-newsletter-btn">Newsletter</button>
+
+        <div class="mobile-drawer-footer">
+            <button class="mobile-drawer-newsletter">Newsletter</button>
         </div>
     </div>
 

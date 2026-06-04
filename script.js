@@ -1,48 +1,60 @@
-// Mobile menu toggle
-const menuBtn = document.querySelector('.menu-toggle');
-const mobileMenu = document.querySelector('.mobile-menu');
-const closeBtn = document.querySelector('.mobile-menu-close');
-const mobileMenuLinks = document.querySelectorAll('.mobile-menu-list a');
-const mobileNewsletterBtn = document.querySelector('.mobile-newsletter-btn');
+// ===== MOBILE DRAWER MENU =====
+const hamburgerBtn = document.querySelector('.hamburger-toggle');
+const mobileDrawer = document.querySelector('.mobile-drawer');
+const drawerCloseBtn = document.querySelector('.mobile-drawer-close');
+const drawerMenuLinks = document.querySelectorAll('.mobile-drawer-menu a');
+const drawerNewsletterBtn = document.querySelector('.mobile-drawer-newsletter');
 
-menuBtn.addEventListener('click', () => {
-    mobileMenu.classList.add('open');
-    menuBtn.classList.add('open');
-    document.body.classList.add('menu-open');
+// Open mobile drawer
+hamburgerBtn.addEventListener('click', () => {
+    mobileDrawer.classList.add('open');
+    hamburgerBtn.classList.add('open');
+    document.body.classList.add('drawer-open');
 });
 
-closeBtn.addEventListener('click', () => {
-    mobileMenu.classList.remove('open');
-    menuBtn.classList.remove('open');
-    document.body.classList.remove('menu-open');
-});
+// Close mobile drawer
+function closeDrawer() {
+    mobileDrawer.classList.remove('open');
+    hamburgerBtn.classList.remove('open');
+    document.body.classList.remove('drawer-open');
+}
 
-// Close menu when a link is clicked
-mobileMenuLinks.forEach(link => {
-    link.addEventListener('click', () => {
-        mobileMenu.classList.remove('open');
-        menuBtn.classList.remove('open');
-        document.body.classList.remove('menu-open');
+// Close when X button is clicked
+drawerCloseBtn.addEventListener('click', closeDrawer);
+
+// Close when a menu link is clicked
+drawerMenuLinks.forEach(link => {
+    link.addEventListener('click', (e) => {
+        closeDrawer();
+        const href = link.getAttribute('href');
+        if (href.startsWith('#')) {
+            e.preventDefault();
+            const targetId = href.substring(1);
+            const target = document.getElementById(targetId);
+            if (target) {
+                setTimeout(() => {
+                    target.scrollIntoView({ behavior: 'smooth' });
+                }, 300);
+            }
+        }
     });
 });
 
-// Close menu when newsletter button is clicked
-mobileNewsletterBtn.addEventListener('click', () => {
-    mobileMenu.classList.remove('open');
-    menuBtn.classList.remove('open');
-    document.body.classList.remove('menu-open');
-    const desktopNewsletterForm = document.querySelector('.newsletter-form');
-    if (desktopNewsletterForm) {
-        desktopNewsletterForm.scrollIntoView({ behavior: 'smooth' });
+// Close when newsletter button is clicked
+drawerNewsletterBtn.addEventListener('click', () => {
+    closeDrawer();
+    const newsletterForm = document.querySelector('.newsletter-form');
+    if (newsletterForm) {
+        setTimeout(() => {
+            newsletterForm.scrollIntoView({ behavior: 'smooth' });
+        }, 300);
     }
 });
 
-// Close menu when clicking outside
+// Close when clicking outside the drawer
 document.addEventListener('click', (e) => {
-    if (!e.target.closest('.mobile-menu') && !e.target.closest('.menu-toggle')) {
-        mobileMenu.classList.remove('open');
-        menuBtn.classList.remove('open');
-        document.body.classList.remove('menu-open');
+    if (!e.target.closest('.mobile-drawer') && !e.target.closest('.hamburger-toggle')) {
+        closeDrawer();
     }
 });
 
