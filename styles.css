@@ -1150,37 +1150,43 @@ img, video {
 
     /* Hero Section Mobile */
     .hero {
-        padding-top: 80px;
-        min-height: 100vh;
+        padding-top: 90px;
+        padding-bottom: 80px;
+        min-height: auto;
     }
 
     .hero-content {
-        padding: 40px 1.5rem 0;
+        padding: 20px;
         z-index: 5;
     }
 
     .hero-title {
         font-size: 2rem;
+        margin-bottom: 20px;
+        line-height: 1.1;
     }
 
     .hero-subtitle {
         font-size: 1rem;
+        margin-bottom: 30px;
     }
 
     .hero-buttons {
         flex-direction: column;
-        gap: 1rem;
+        gap: 16px;
+        margin-top: 20px;
+        margin-bottom: 40px;
     }
 
-    .btn {
+    .hero-buttons .btn {
         width: 100%;
         padding: 0.85rem 1.5rem;
+        min-height: 52px;
     }
 
     .category-tags {
         gap: 0.75rem;
-        margin-bottom: 1.5rem;
-        margin-top: 24px;
+        margin-bottom: 20px;
     }
 
     .tag {
@@ -1357,6 +1363,7 @@ img, video {
     /* Navbar Extra Small */
     .navbar {
         padding: 1rem 1.25rem;
+        height: 64px;
     }
 
     .navbar-logo .logo-image {
@@ -1365,27 +1372,40 @@ img, video {
 
     /* Hero Extra Small */
     .hero {
-        height: 50vh;
-        min-height: 400px;
+        padding-top: 90px;
+        padding-bottom: 80px;
+        min-height: auto;
     }
 
     .hero-content {
-        padding: 0 1rem;
+        padding: 20px;
     }
 
     .hero-title {
         font-size: 1.5rem;
-        margin-bottom: 1rem;
+        margin-bottom: 20px;
+        line-height: 1.1;
     }
 
     .hero-subtitle {
         font-size: 0.95rem;
-        margin-bottom: 1.5rem;
+        margin-bottom: 30px;
+    }
+
+    .hero-buttons {
+        flex-direction: column;
+        gap: 16px;
+        margin-top: 20px;
+        margin-bottom: 40px;
+    }
+
+    .hero-buttons .btn {
+        min-height: 52px;
     }
 
     .category-tags {
         gap: 0.5rem;
-        margin-bottom: 1rem;
+        margin-bottom: 20px;
         flex-wrap: wrap;
     }
 
