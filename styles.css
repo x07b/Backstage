@@ -134,50 +134,40 @@ body {
 .hero {
     position: relative;
     height: 100vh;
+    overflow: hidden;
+    background: #000;
     display: flex;
     align-items: center;
     justify-content: center;
-    overflow: hidden;
-    padding-top: 80px;
 }
 
 .hero-video {
     position: absolute;
-    top: 50%;
-    left: 50%;
-    min-width: 100%;
-    min-height: 100%;
+    inset: 0;
     width: 100%;
     height: 100%;
-    transform: translate(-50%, -50%);
-    border: none;
-    z-index: 0;
+    object-fit: cover;
+    z-index: 1;
 }
 
-.hero-overlay {
+.hero-dark-overlay {
     position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.55);
-    z-index: 1;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.6);
+    z-index: 2;
 }
 
 .hero-gradient-overlay {
     position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(135deg, rgba(235, 0, 0, 0.15) 0%, rgba(149, 0, 138, 0.15) 50%, rgba(51, 0, 252, 0.15) 100%);
-    z-index: 2;
-    mix-blend-mode: overlay;
+    inset: 0;
+    background: linear-gradient(135deg, rgba(255, 0, 110, 0.22), rgba(120, 60, 255, 0.18), rgba(0, 80, 255, 0.16));
+    z-index: 3;
+    mix-blend-mode: screen;
 }
 
 .hero-content {
     position: relative;
-    z-index: 3;
+    z-index: 4;
     text-align: center;
     max-width: 900px;
     padding: 0 2rem;
