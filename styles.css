@@ -43,10 +43,20 @@ body {
     font-size: 1.5rem;
     font-weight: 700;
     letter-spacing: 0.05em;
-    background: linear-gradient(135deg, #ff006e, #8338ec, #3a86ff);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
+    display: flex;
+    align-items: center;
+}
+
+.navbar-logo .logo-image {
+    height: 45px;
+    width: auto;
+    object-fit: contain;
+}
+
+.footer-logo .logo-image {
+    height: 40px;
+    width: auto;
+    object-fit: contain;
 }
 
 .nav-menu {
@@ -124,32 +134,40 @@ body {
 .hero {
     position: relative;
     height: 100vh;
+    overflow: hidden;
+    background: #000;
     display: flex;
     align-items: center;
     justify-content: center;
-    overflow: hidden;
-    padding-top: 80px;
 }
 
-.hero-background {
+.hero-video {
     position: absolute;
-    top: 0;
-    left: 0;
+    inset: 0;
     width: 100%;
     height: 100%;
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #f093fb 100%);
-    z-index: -1;
-    animation: gradient-shift 8s ease infinite;
+    object-fit: cover;
+    z-index: 1;
 }
 
-@keyframes gradient-shift {
-    0%, 100% { filter: brightness(0.8); }
-    50% { filter: brightness(1); }
+.hero-dark-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.6);
+    z-index: 2;
+}
+
+.hero-gradient-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, rgba(255, 0, 110, 0.22), rgba(120, 60, 255, 0.18), rgba(0, 80, 255, 0.16));
+    z-index: 3;
+    mix-blend-mode: screen;
 }
 
 .hero-content {
     position: relative;
-    z-index: 2;
+    z-index: 4;
     text-align: center;
     max-width: 900px;
     padding: 0 2rem;
@@ -887,10 +905,8 @@ body {
 .footer-logo {
     font-size: 1.5rem;
     font-weight: 700;
-    background: linear-gradient(135deg, #ff006e, #8338ec, #3a86ff);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
+    display: flex;
+    align-items: center;
 }
 
 .footer-tagline {
