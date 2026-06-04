@@ -47,7 +47,13 @@ body {
     align-items: center;
 }
 
-.logo-image {
+.navbar-logo .logo-image {
+    height: 45px;
+    width: auto;
+    object-fit: contain;
+}
+
+.footer-logo .logo-image {
     height: 40px;
     width: auto;
     object-fit: contain;
