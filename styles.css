@@ -22,6 +22,10 @@ body.menu-open {
     overflow: hidden;
 }
 
+body.menu-open .navbar {
+    display: none;
+}
+
 img, video {
     max-width: 100%;
     height: auto;
