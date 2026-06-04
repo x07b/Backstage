@@ -1,26 +1,48 @@
-// Hamburger menu toggle
-const hamburgerBtn = document.getElementById('hamburger-btn');
-const navMenu = document.getElementById('nav-menu');
-const navLinks = document.querySelectorAll('.nav-menu a');
+// Mobile menu toggle
+const menuBtn = document.querySelector('.menu-toggle');
+const mobileMenu = document.querySelector('.mobile-menu');
+const closeBtn = document.querySelector('.mobile-menu-close');
+const mobileMenuLinks = document.querySelectorAll('.mobile-menu-list a');
+const mobileNewsletterBtn = document.querySelector('.mobile-newsletter-btn');
 
-hamburgerBtn.addEventListener('click', () => {
-    hamburgerBtn.classList.toggle('active');
-    navMenu.classList.toggle('active');
+menuBtn.addEventListener('click', () => {
+    mobileMenu.classList.add('open');
+    menuBtn.classList.add('open');
+    document.body.classList.add('menu-open');
 });
 
-// Close menu when link is clicked
-navLinks.forEach(link => {
+closeBtn.addEventListener('click', () => {
+    mobileMenu.classList.remove('open');
+    menuBtn.classList.remove('open');
+    document.body.classList.remove('menu-open');
+});
+
+// Close menu when a link is clicked
+mobileMenuLinks.forEach(link => {
     link.addEventListener('click', () => {
-        hamburgerBtn.classList.remove('active');
-        navMenu.classList.remove('active');
+        mobileMenu.classList.remove('open');
+        menuBtn.classList.remove('open');
+        document.body.classList.remove('menu-open');
     });
+});
+
+// Close menu when newsletter button is clicked
+mobileNewsletterBtn.addEventListener('click', () => {
+    mobileMenu.classList.remove('open');
+    menuBtn.classList.remove('open');
+    document.body.classList.remove('menu-open');
+    const desktopNewsletterForm = document.querySelector('.newsletter-form');
+    if (desktopNewsletterForm) {
+        desktopNewsletterForm.scrollIntoView({ behavior: 'smooth' });
+    }
 });
 
 // Close menu when clicking outside
 document.addEventListener('click', (e) => {
-    if (!e.target.closest('.navbar')) {
-        hamburgerBtn.classList.remove('active');
-        navMenu.classList.remove('active');
+    if (!e.target.closest('.mobile-menu') && !e.target.closest('.menu-toggle')) {
+        mobileMenu.classList.remove('open');
+        menuBtn.classList.remove('open');
+        document.body.classList.remove('menu-open');
     }
 });
 
