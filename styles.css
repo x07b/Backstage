@@ -43,7 +43,7 @@ body {
     font-size: 1.5rem;
     font-weight: 700;
     letter-spacing: 0.05em;
-    background: linear-gradient(135deg, #ff006e, #8338ec, #3a86ff);
+    background: linear-gradient(135deg, #eb0000, #95008a, #3300fc);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
@@ -887,7 +887,7 @@ body {
 .footer-logo {
     font-size: 1.5rem;
     font-weight: 700;
-    background: linear-gradient(135deg, #ff006e, #8338ec, #3a86ff);
+    background: linear-gradient(135deg, #eb0000, #95008a, #3300fc);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
